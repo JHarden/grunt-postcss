@@ -11,17 +11,31 @@ module.exports = function(grunt) {
             options:{
                 processors:[
 
-                    require('autoprefixer')({browsers: ['last 8 versions']}),
-                    //require('cssnext')(), not for maintenance projects
-                    //require('precss')(), not for maintenance projects
+                    //adds vendor prefixes
+                    require('autoprefixer')({browsers: ['last 8 version']}),
+                    //discard duplicate rules
                     require('postcss-discard-duplicates'),
+                    //discard empty rules
                     require('postcss-discard-empty'),
+                    //discard comments
+                    require('postcss-discard-comments'),
+                    //merge longhand properties, margin, padding etc
                     require('postcss-merge-longhand'),
+                    //merge adjacent rules
                     require('postcss-merge-rules'),
+                    //minifies selector usage
                     require('postcss-minify-selectors'),
+                    //minify font declarations
                     require('postcss-minify-font-values'),
-                    require('postcss-property-sorter')
-                    //require('cssnano')({discardComments: {removeAll: true}})
+                    //sorts properties in a rule from [a-z]
+                    require('postcss-property-sorter'),
+                    //css beautifier (turn off if using nano)
+                    require('perfectionist'),
+
+                    //require('cssnext')(), // not for maintenance projects
+                    //require('precss')(),  // not for maintenance projects
+                    //require('stylelint')  // not for maintenance projects - good for setting up and maintaining best practices
+                    //require('cssnano')({discardComments: {removeAll: true}}) // minifies stylesheet
 
                 ]
             },
@@ -56,6 +70,7 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-postcss');
+
 
     //create a custom task that uses concat and postcss
     grunt.registerTask('init',['concat','postcss']);
