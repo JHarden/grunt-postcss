@@ -1,0 +1,17 @@
+
+.autoprefixer {
+    color:red;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+}
+
+@media (max-width:414px){
+
+    .first-class-414{
+        color:red;
+    }
+
+}

@@ -3,8 +3,26 @@
     display: flex;
 }
 
+@media (max-width:414px){
 
+    .first-class-414{
+        color:red;
+    }
+
+}
 
 .john{
     color:black;
+}
+
+@media (max-width:414px){
+
+    .second-class-414{
+        color:blue;
+    }
+
+    .first-class-414{
+        border:1px solid blue;
+    }
+
 }

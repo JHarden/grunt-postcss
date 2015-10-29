@@ -3,3 +3,10 @@
     display: flex;
 }
 
+@media (max-width:414px){
+
+    .first-class-414{
+        color:red;
+    }
+
+}

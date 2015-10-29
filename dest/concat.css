@@ -1,13 +1,1 @@
-
-.autoprefixer {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-
-
-.john{
-    color:black;
-}
+.autoprefixer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.john{color:#000}@media (max-width:414px){.first-class-414{color:red}.second-class-414{color:blue}.first-class-414{border:1px solid blue}}
